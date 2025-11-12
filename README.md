@@ -1,5 +1,5 @@
 # DA401 Project
-<<<<<<< HEAD
+
 A link to all data used for this project: https://drive.google.com/drive/folders/19en3KFrPTWbO6jOHRgV_bT38JTvAjWw8?usp=drive_linkad759ac32d4841f7c7af0ff73eb593771093dafb
 
 ---
