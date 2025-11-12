@@ -6,18 +6,18 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 
 **Workflow Log for Flood Risk Modeling in Sindh**
 
-### **1. Rainfall Map**
+### ***1. Rainfall Map***
 
 * Obtained rainfall data for the Sindh region, linked in Data folder.
 * Clip to study area
 
 
-### **2. Distance from River**
+### ***2. Distance from River***
 
 * Calculated **Euclidean distance** from all major rivers to each latitude/longitude point across the study area.
 
 
-### **3. Drainage Density Map**
+### ***3. Drainage Density Map***
 
 1. Downloaded **SRTM 1 DEM** data containing slope, color relief (elevation), and aspect.
 2. Converted DEM to **Fill**, removing spurious depressions.
@@ -27,25 +27,25 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 6. Applied the **Line Density Tool** to compute drainage density.
 
 
-### **4. Slope**
+### ***4. Slope***
 
 * Used the **Slope Tool** on the DEM data, selecting the **percent rise** option to quantify slope steepness across the study area.
 
 
-### **5. Elevation**
+### ***5. Elevation***
 
 * Obtained elevation data from **Diva-GIS spatial datasets**, clipped to study area.
 
-### **6. Flood Risk Index**
+### ***6. Flood Risk Index***
 
-**Objective:** Construct a composite flood risk index.
+***Objective:*** Construct a composite flood risk index.
 
 1. Reclassified each input variable (rainfall, slope, elevation, drainage density, distance from river) on a **scale of 1–5**, representing increasing flood susceptibility (1: low, 5: high).
 2. Applied the **Weighted Sum Tool** to combine reclassified layers using predefined variable weights.
 3. Reclassified the resulting flood risk raster into **five categories (1–5)** for final interpretation (1: low, 5:high).
 
 
-### **7. Preparing Rasters for Regression**
+### ***7. Preparing Rasters for Regression***
 
 1. Converted both **Flood Risk** and **Land Use** rasters to **point features**.
 
@@ -56,4 +56,4 @@ A link to all data used for this project: https://drive.google.com/drive/folders
    * Maintained proportional representation by land use category.
    * Applied a **4-meter minimum selection distance**, matching the flood risk cell size.
 3. Used the **Extract Multi Values to Points** tool to join land use attributes (grid codes) with the corresponding flood risk points.
-=======
+
