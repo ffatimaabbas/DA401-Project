@@ -1,5 +1,6 @@
 # DA401 Project
 <<<<<<< HEAD
+A link to all data used for this project: https://drive.google.com/drive/folders/19en3KFrPTWbO6jOHRgV_bT38JTvAjWw8?usp=drive_linkad759ac32d4841f7c7af0ff73eb593771093dafb
 
 ---
 
@@ -56,5 +57,3 @@
    * Applied a **4-meter minimum selection distance**, matching the flood risk cell size.
 3. Used the **Extract Multi Values to Points** tool to join land use attributes (grid codes) with the corresponding flood risk points.
 =======
-A link to all data used for this project: https://drive.google.com/drive/folders/19en3KFrPTWbO6jOHRgV_bT38JTvAjWw8?usp=drive_link
->>>>>>> ad759ac32d4841f7c7af0ff73eb593771093dafb
