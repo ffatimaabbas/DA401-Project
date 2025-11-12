@@ -6,7 +6,7 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 
 **Workflow Log for Flood Risk Modeling in Sindh**
 
-### ***1. Rainfall Map***
+### *1. Rainfall Map*
 
 * Obtained rainfall data for the Sindh region, linked in Data folder.
 * Clip to study area
