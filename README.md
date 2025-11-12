@@ -38,8 +38,6 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 
 ### 6. Flood Risk Index
 
-***Objective:*** Construct a composite flood risk index.
-
 1. Reclassified each input variable (rainfall, slope, elevation, drainage density, distance from river) on a **scale of 1–5**, representing increasing flood susceptibility (1: low, 5: high).
 2. Applied the **Weighted Sum Tool** to combine reclassified layers using predefined variable weights.
 3. Reclassified the resulting flood risk raster into **five categories (1–5)** for final interpretation (1: low, 5:high).
