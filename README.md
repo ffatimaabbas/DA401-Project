@@ -11,10 +11,9 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 * Obtained rainfall data for the Sindh region, linked in Data folder.
 * Clip to study area
 
-
-### 2. Distance from River
-
-* Calculated **Euclidean distance** from all major rivers to each latitude/longitude point across the study area.
+### 2. Land Use and Land Cover 
+* Land Use & Land Cover (LULC) was obtained from the ESRI LULC dataset, linked in data folder 
+* Clip to study area
 
 
 ### 3. Drainage Density Map
@@ -38,20 +37,16 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 
 ### 6. Flood Risk Index
 
-1. Reclassified each input variable (rainfall, slope, elevation, drainage density, distance from river) on a **scale of 1–5**, representing increasing flood susceptibility (1: low, 5: high).
+1. Reclassified each input variable (rainfall, slope, elevation, drainage density, LULC) on a **scale of 1–5**, representing increasing flood susceptibility (1: low, 5: high).
 2. Applied the **Weighted Sum Tool** to combine reclassified layers using predefined variable weights.
 3. Reclassified the resulting flood risk raster into **five categories (1–5)** for final interpretation (1: low, 5:high).
 
 
 ### 7. Preparing Rasters for Regression
 
-1. Converted both **Flood Risk** and **Land Use** rasters to **point features**.
+1. Overlay **Flood Risk** on **District**
 
-   * Flood risk raster produced **4,960 points**.
-   * Land use raster initially contained over a million points.
-2. Reduced the land use sample to **4,960 points** using **spatially proportional sampling** across Sindh.
-
-   * Maintained proportional representation by land use category.
-   * Applied a **4-meter minimum selection distance**, matching the flood risk cell size.
-3. Used the **Extract Multi Values to Points** tool to join land use attributes (grid codes) with the corresponding flood risk points.
-
+   * Flood risk raster produces **4,960 points** over our study area
+   * Convert study area to a raster with the same cell size as our flood risk raster, with the same extent  
+   * Run zonal statistics, assign each district the majority flood risk value 
+   * Export flood risk by district as a table to perform regression
