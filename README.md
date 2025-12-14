@@ -1,6 +1,6 @@
 # DA401 Project
 
-A link to all data used for this project: https://drive.google.com/drive/folders/19en3KFrPTWbO6jOHRgV_bT38JTvAjWw8?usp=drive_linkad759ac32d4841f7c7af0ff73eb593771093dafb
+A link to all data (remote sensing) used for this project: https://drive.google.com/drive/folders/19en3KFrPTWbO6jOHRgV_bT38JTvAjWw8?usp=drive_linkad759ac32d4841f7c7af0ff73eb593771093dafb
 
 ---
 
@@ -14,6 +14,7 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 ### 2. Land Use and Land Cover 
 * Land Use & Land Cover (LULC) was obtained from the ESRI LULC dataset, linked in data folder 
 * Clip to study area
+* Reproject clipped **Land Use** raster into a geographic coordinate system (WGS 84) using **Project Raster tool**
 
 
 ### 3. Drainage Density Map
@@ -37,9 +38,9 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 
 ### 6. Flood Risk Index
 
-1. Reclassified each input variable (rainfall, slope, elevation, drainage density, LULC) on a **scale of 1–5**, representing increasing flood susceptibility (1: low, 5: high).
-2. Applied the **Weighted Sum Tool** to combine reclassified layers using predefined variable weights.
-3. Reclassified the resulting flood risk raster into **five categories (1–5)** for final interpretation (1: low, 5:high).
+1. Reclassified each input variable (rainfall, slope, elevation, drainage density, LULC) using **Reclassify** tool on a **scale of 1–5**, representing increasing flood susceptibility (1: low, 5: high).
+2. Applied the **Weighted Sum Tool** to combine reclassified layers using predetermined variable weights.
+3. Reclassified the resulting flood risk raster into **five categories (1–5)** (1: low, 5:high), to create a discrete integer raster.
 
 
 ### 7. Preparing Rasters for Regression
@@ -47,6 +48,31 @@ A link to all data used for this project: https://drive.google.com/drive/folders
 1. Overlay **Flood Risk** on **District**
 
    * Flood risk raster produces **4,960 points** over our study area
-   * Convert study area to a raster with the same cell size as our flood risk raster, with the same extent  
+   * Match study area to flood risk by reprojecting it to the same cell size as our flood risk raster
+   * Export study area as a table (located within project repo as Study_area.dbf)
    * Run zonal statistics, assign each district the majority flood risk value 
-   * Export flood risk by district as a table to perform regression
+   * Export flood risk by district as a table to perform regression (located within project repo as floodrisk_bydistrict.dbf)
+   
+### Data Preparation and Regression Analysis in R
+
+**Dependencies: **
+
+foreign: used to read ArcGIS .dbf attribute tables
+dplyr: used for data manipulation and joins
+readr: used for reading CSV files
+
+Data exported from GIS: Located within **Regression Files** folder 
+
+***Files***
+The two files are able to run separately depending on need.
+
+1. weights.R: is run to revise pairwise comparison matrices by Ouma & Tateishi, also used to receive weights for our study using eigenvector approach. Code must be run in order. 
+
+2. regressionDA401.R: conducts regression analysis between flood risk and literacy rates. Requires data tables to be downloaded from *Regression Files** folder. Code must be run in order. 
+
+
+
+
+
+   
+   
